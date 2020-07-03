@@ -1,0 +1,39 @@
+#include<iostream>
+#include<cstdlib>
+#include<cstdio>
+
+using namespace std;
+
+int main(){
+     cout<<"hello"<<endl;
+     //define the array
+     int arr[10]={11,22,33,44,55,66,77,88,99,123};
+     
+     int start,end,mid,key;
+     bool flag;
+     
+     //input the key
+     cout<<"enter thr number you want to search. "<<endl;
+     cin>>key;
+     
+     start=0;
+     end=sizeof(arr)/sizeof(int);
+     do{
+         mid=(start+end)/2;
+        if(arr[mid]==key){
+            flag=true;
+              break;
+        }
+        else if(arr[mid]>key){
+            end=end-1;
+        }
+        else
+            start=start+1;
+     }while(end-start>1);
+     
+     if(flag==true)
+         cout<<key<<" found at "<<mid<<" index at array"<<endl;
+         else
+             cout<<"element not found"<<endl;
+    return 0;
+}
